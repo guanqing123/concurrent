@@ -1,4 +1,4 @@
-package com.high.thread.juc;
+package com.high.thread.juc.reentrantlock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Author guanqing
  * @Date 2021/10/15 16:49
  **/
-public class InterruptPELock {
+public class InterruptPELock2 {
 
     private static ReentrantLock lock1 = new ReentrantLock(false);
     private static ReentrantLock lock2 = new ReentrantLock(false);
@@ -47,11 +47,14 @@ public class InterruptPELock {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         T t1 = new T("t1", 1);
         T t2 = new T("t2", 2);
 
         t1.start();
         t2.start();
+
+        TimeUnit.SECONDS.sleep(5);
+        t2.interrupt();
     }
 }

@@ -1,4 +1,4 @@
-package com.high.thread.juc;
+package com.high.thread.juc.reentrantlock;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Author guanqing
  * @Date 2021/10/15 8:54
  **/
-public class RELock {
+public class RELock2 {
 
     private static int num = 0;
 
@@ -15,9 +15,11 @@ public class RELock {
 
     public static void add(){
         lock.lock();
+        lock.lock();
         try {
             num++;
         } finally {
+            lock.unlock();
             lock.unlock();
         }
     }
@@ -26,7 +28,7 @@ public class RELock {
         @Override
         public void run() {
             for (int i = 0; i < 10000; i++){
-                RELock.add();
+                RELock2.add();
             }
         }
     }
@@ -45,6 +47,6 @@ public class RELock {
         t2.join();
         t3.join();
 
-        System.out.println(RELock.num);
+        System.out.println(RELock2.num);
     }
 }
