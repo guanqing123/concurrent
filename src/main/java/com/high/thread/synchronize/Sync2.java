@@ -37,7 +37,7 @@ public class Sync2 {
         System.out.println(Sync2.num);
         /**
          * 打印结果：
-         * 21429
+         * 30000
          */
     }
 }
