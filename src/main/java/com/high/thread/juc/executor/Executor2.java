@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @description: TODO 类描述
+ * @description: TODO scheduleAtFixedRate
  * @Author guanqing
  * @Date 2021/10/23 17:30
  **/

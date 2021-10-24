@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @description: TODO 类描述
+ * @description: TODO schedule
  * @Author guanqing
  * @Date 2021/10/22 9:00
  **/
