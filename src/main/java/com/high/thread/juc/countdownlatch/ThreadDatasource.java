@@ -61,6 +61,8 @@ public class ThreadDatasource {
                 mainMonitor.countDown();
                 //为了让主线程阻塞，让子线程执行。
                 Thread.currentThread().join();
+                if (executor != null)
+                    executor.shutdown();
             } catch (Exception e) {
                 e.printStackTrace();
             }
